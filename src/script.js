@@ -36,13 +36,6 @@ class TableComponent extends React.Component {
       } else {
         this.state.persons[randomPerson].voices += 1;
       }
-      // this.props.persons.map((person) => {
-      //   if (rand < 1 / this.props.persons.length) {
-      //     return;
-      //   } else {
-      //     person.voices += 1;
-      //   }
-      // }) && this.render();
     }, 10);
 
     let intervalId2 = setInterval(() => {
