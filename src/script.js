@@ -30,12 +30,31 @@ class TableComponent extends React.Component {
     // добавление голосов
     let intervalId = setInterval(() => {
       let rand = Math.random();
-      let randomPerson = Math.floor(Math.random() * this.props.persons.length);
-      if (rand < 1 / this.props.persons.length) {
+      let randomPerson =
+        rand > 1 / this.props.persons.length
+          ? Math.floor(rand * this.props.persons.length)
+          : false;
+      if (randomPerson == false) {
         return;
       } else {
         this.state.persons[randomPerson].voices += 1;
       }
+      // if (rand < 1 / this.props.persons.length) {
+      //   return;
+      // } else {
+      //   this.state.persons[randomPerson].voices += 1;
+      // }
+
+      // Вариант с циклом где мы поочередно проходим по каждому person
+      // и решаем давать ему голос или нет % шанса зависит от колличества person  в массиве
+
+      // this.props.persons.map((person) => {
+      //   if (rand < 1 / this.props.persons.length) {
+      //     return;
+      //   } else {
+      //     person.voices += 1;
+      //   }
+      // }) && this.render();
     }, 10);
 
     let intervalId2 = setInterval(() => {
