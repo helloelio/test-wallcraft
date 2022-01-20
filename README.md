@@ -1,8 +1,13 @@
 # test-wallcraft
 
 ## Установка зависимосте
+
 - npm install
+
 ## Запуск сервера разработки
-- gulp dev
+
+- npm run dev
+
 ## Запуск сборки
-- gulp build
+
+- npm run build
