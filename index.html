@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>test-wallcraft</title>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="header__logo">Logo</div>
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Home</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">About</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Services</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="btn btn-burger">
+            <img src="./images/hamburger.svg" alt="" />
+          </button>
+          <nav class="burger">
+            <ul class="burger__list">
+              <li class="burger__item">
+                <a class="burger__link" href="/">Home</a>
+              </li>
+              <li class="burger__item">
+                <a class="burger__link" href="/">About</a>
+              </li>
+              <li class="burger__item">
+                <a class="burger__link" href="/">Services</a>
+              </li>
+              <li class="burger__item">
+                <a class="burger__link" href="/">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <section class="hero">
+        <h1 class="hero__title">Business Name or Tagline</h1>
+        <!-- <img src="./images/banner-placeholder.png" alt="" /> -->
+      </section>
+      <div class="container">
+        <div class="main-content">
+          <section class="about">
+            <article>
+              <h2 class="about__title">What We Do</h2>
+              <p class="about__description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
+                distinctio facere similique saepe eum deserunt delectus
+                excepturi enim recusandae eligendi! Similique doloremque
+                laudantium quos quod dolorem voluptas eligendi facere repellat?
+              </p>
+              <p class="about__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+                consectetur deserunt, minima ratione officia saepe incidunt ad
+                nihil fugiat dolorum qui id voluptatem ducimus. Obcaecati, error
+                autem? Ducimus, ea fuga?
+              </p>
+            </article>
+          </section>
+          <section class="contacts">
+            <article>
+              <h2 class="contacts__title">Contact Us</h2>
+              <ul class="contacts__items">
+                <li class="contacts__item">
+                  <address class="contacts__address">
+                    3481 Melrose Place <br />
+                    Beverly Hills CA 90210
+                  </address>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__tel" href="tel:(123) 456-7890"
+                    >(123) 456-7890</a
+                  >
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__mail" href="mailto:name@example.com"
+                    >name@example.com</a
+                  >
+                </li>
+              </ul>
+            </article>
+          </section>
+        </div>
+        <section class="elections">
+          <article>
+            <div id="elections-main" class="elections__main"></div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <span> Copyright &copy; Your Website 2018</span>
+    </footer>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
