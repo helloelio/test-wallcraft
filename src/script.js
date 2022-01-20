@@ -94,7 +94,7 @@ class TableComponent extends React.Component {
       });
       let max = numbers[0];
       for (let i = 0; i < numbers.length; i += 1) {
-        if (numbers[i] > max) max = arr[i];
+        if (numbers[i] > max) max = numbers[i];
       }
       // добавляем в стейт победителя
       this.state.persons.map((person) => {
