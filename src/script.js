@@ -30,15 +30,11 @@ class TableComponent extends React.Component {
     // добавление голосов
     let intervalId = setInterval(() => {
       let rand = Math.random();
-      let randomPerson =
-        rand > 1 / this.props.persons.length
-          ? Math.floor(rand * this.props.persons.length)
-          : false;
-      if (randomPerson == false) {
-        return;
-      } else {
-        this.state.persons[randomPerson].voices += 1;
-      }
+      let randomPerson = Math.floor(rand * this.props.persons.length);
+      this.state.persons[randomPerson].voices += 1;
+
+      // Вариаент где рандомному person либо присваевается либо не присваеватся голос
+      // Шанс 1 / колличество person
       // if (rand < 1 / this.props.persons.length) {
       //   return;
       // } else {
@@ -47,7 +43,6 @@ class TableComponent extends React.Component {
 
       // Вариант с циклом где мы поочередно проходим по каждому person
       // и решаем давать ему голос или нет % шанса зависит от колличества person  в массиве
-
       // this.props.persons.map((person) => {
       //   if (rand < 1 / this.props.persons.length) {
       //     return;
@@ -57,27 +52,28 @@ class TableComponent extends React.Component {
       // }) && this.render();
     }, 10);
 
-    let intervalId2 = setInterval(() => {
-      // Сортируем наш массив по убыванию колличества очков
-      this.setState({
-        persons: this.state.persons.sort((a, b) => b.voices - a.voices),
-      });
-      // записываем в стейт колличество голосов за 1 сек
-      this.state.persons.map((person) => {
+    let intervalId2 =
+      setInterval(() => {
+        // Сортируем наш массив по убыванию колличества очков
         this.setState({
-          allVoices: (this.state.allVoices += person.voices),
+          persons: this.state.persons.sort((a, b) => b.voices - a.voices),
         });
-      });
-      // считаем проценты для person
-      this.state.persons.map((person) => {
-        person.percents = (
-          person.voices /
-          (this.state.allVoices / 100)
-        ).toFixed(2);
-      });
-      // обнуляем каждый ТИК общее колличество голосов для корректной работы
-      this.setState({ allVoices: 0 });
-    }, 1000);
+        // записываем в стейт колличество голосов за 1 сек
+        this.state.persons.map((person) => {
+          this.setState({
+            allVoices: (this.state.allVoices += person.voices),
+          });
+        });
+        // считаем проценты для person
+        this.state.persons.map((person) => {
+          person.percents = (
+            person.voices /
+            (this.state.allVoices / 100)
+          ).toFixed(2);
+        });
+        // обнуляем каждый ТИК общее колличество голосов для корректной работы
+        this.setState({ allVoices: 0 });
+      }, 1000) && this.render();
 
     // добавление процентов
     setTimeout(() => {
